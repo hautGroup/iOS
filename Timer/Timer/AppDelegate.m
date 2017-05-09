@@ -2,12 +2,11 @@
 //  AppDelegate.m
 //  Timer
 //
-//  Created by 曹永超 on 2017/5/8.
+//  Created by 曹永超 on 2017/5/9.
 //  Copyright © 2017年 曹永超. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "RegisterTestVC.h"
 
 @interface AppDelegate ()
 
@@ -18,22 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self setRootViewController];//设置window的根视图（启动app时要判断是否是第一次打开  是否是登录状态）
-    
     return YES;
 }
 
-- (void)setRootViewController {
-    
-    
-    self.window.rootViewController = [RegisterTestVC new];
-    
-    [self.window makeKeyAndVisible];
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
