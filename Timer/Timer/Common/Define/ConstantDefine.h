@@ -87,11 +87,11 @@
 
 /******************主题颜色*************/
 
-#define THEME_COLOR [HTTool colorFromHexRGB:@"F7A81F" alpha:1.0]//主题颜色
+#define THEME_COLOR [TTool colorFromHexRGB:@"F7A81F" alpha:1.0]//主题颜色
 
-#define DEEP_COLOR [HTTool colorFromHexRGB:@"464139" alpha:1.0]//所用到的最深的颜色
+#define DEEP_COLOR [TTool colorFromHexRGB:@"464139" alpha:1.0]//所用到的最深的颜色
 
-#define GRAYLIKE_COLOR [HTTool colorFromHexRGB:@"8E8E8E" alpha:1.0]//类似于灰色
+#define GRAYLIKE_COLOR [Tool colorFromHexRGB:@"8E8E8E" alpha:1.0]//类似于灰色
 
 #define NORMALBG_COLOR My_RGD_Color(249, 249, 249, 1);
 

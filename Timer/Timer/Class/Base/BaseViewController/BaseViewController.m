@@ -24,16 +24,16 @@
 //    _isloading = NO;
 //    
 //}
-//-(UIButton *)buttonWithTitle:(NSString *)title frame:(CGRect)frame action:(SEL)action AddView:(id)view
-//{
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.frame = frame;
-//    button.backgroundColor = [UIColor lightGrayColor];
-//    [button setTitle:title forState:UIControlStateNormal];
-//    [button addTarget:self action:action forControlEvents:UIControlEventTouchDown];
-//    [view addSubview:button];
-//    return button;
-//}
+-(UIButton *)buttonWithTitle:(NSString *)title frame:(CGRect)frame action:(SEL)action AddView:(id)view
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = frame;
+    button.backgroundColor = [UIColor lightGrayColor];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button addTarget:self action:action forControlEvents:UIControlEventTouchDown];
+    [view addSubview:button];
+    return button;
+}
 ///**
 // *获取用户信息
 // *
@@ -82,19 +82,19 @@
 //    }];
 //}
 //
-///**
-// *  get请求
-// *  根据传入的url来发送get请求
-// *  并且可以利用delegate回调
-// */
-//
-//- (void)getRequestWithURL:(NSString *)urlStr isJson:(BOOL)isJson showHUD:(BOOL)show requestID:(NSString *)ID delegate:(id<HttpRequestDelegate>)delegate {
-//    
-//    [self showHUD:show withText:@"" progress:0];
-//    
-//    [HttpRequestManager getWithURL:urlStr isJson:isJson dismssHUB:YES requestID:ID delegate:delegate];
-//    
-//}
+/**
+ *  get请求
+ *  根据传入的url来发送get请求
+ *  并且可以利用delegate回调
+ */
+
+- (void)getRequestWithURL:(NSString *)urlStr isJson:(BOOL)isJson showHUD:(BOOL)show requestID:(NSString *)ID delegate:(id<HttpRequestDelegate>)delegate {
+    
+    [self showHUD:show withText:@"" progress:0];
+    
+    [HttpRequestManager getWithURL:urlStr isJson:isJson dismssHUB:YES requestID:ID delegate:delegate];
+    
+}
 ///**
 // *  获取网络图片
 // *
@@ -146,38 +146,38 @@
 //    
 //}
 //
-//- (void)showHUD:(BOOL)show withText:(NSString *)text progress:(CGFloat)progress{
-//    
-//    if (!show) {
-//        
-//        return;
-//    }
-//    
-//    [SVProgressHUD setBackgroundColor:[UIColor lightGrayColor]];
-//    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-//    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-//    
-//    if (text && text.length > 0) {
-//        
-//        [SVProgressHUD showWithStatus:text];
-//    }
-//    else {
-//        
-//        [SVProgressHUD show];
-//    }
-//}
-//
-//- (void)stopHUD {
-//    
-//    if ([SVProgressHUD isVisible]) {
-//        
-//        [SVProgressHUD dismiss];
-//    }
-//}
-//
-//- (void)httpError:(int)errorCode requestID:(NSString *)ID{
-//    self.isloading = NO;
+- (void)showHUD:(BOOL)show withText:(NSString *)text progress:(CGFloat)progress{
+    
+    if (!show) {
+        
+        return;
+    }
+    
+    [SVProgressHUD setBackgroundColor:[UIColor lightGrayColor]];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    
+    if (text && text.length > 0) {
+        
+        [SVProgressHUD showWithStatus:text];
+    }
+    else {
+        
+        [SVProgressHUD show];
+    }
+}
+
+- (void)stopHUD {
+    
+    if ([SVProgressHUD isVisible]) {
+        
+        [SVProgressHUD dismiss];
+    }
+}
+
+- (void)httpError:(int)errorCode requestID:(NSString *)ID{
+    self.isloading = NO;
 //    
 //    if (self.isShowingAlert) {
 //    
@@ -205,7 +205,7 @@
 //        }
 //    }
 //    
-//}
+}
 //
 //- (void) httpHandle:(NSData *)resultData requestID:(NSString *)ID isJson:(BOOL)isJson {
 //    

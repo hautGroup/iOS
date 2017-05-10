@@ -15,9 +15,11 @@
 #ifndef URLDefine_h
 #define URLDefine_h
 
-#define BaseURL @"http://www.dynacno.com/" //域名
+#define BaseURL @"http://www.dynacno.com" //域名
 
-#define RegisterURL @"register/post"; //注册
+#define RegisterURL @"/register/post"  //注册
+
+#define ValidateEmail @"/validateEmail" //校验邮箱是否可用
 
 
 

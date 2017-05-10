@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RegisterVC.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,51 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self setRootViewController];
+    
     return YES;
 }
+
+/**
+ *  根据状态设置window的根视图
+ */
+- (void)setRootViewController {
+
+    /*
+    NSString *firstLunch = [UDF objectForKey:FirstLunchKey];
+    
+    if (!firstLunch || [firstLunch isEqualToString:@"NO"]) {//第一次加载 根视图为导航页
+        
+        self.window.rootViewController = [NavigationPage new];
+        
+        [self.window makeKeyAndVisible];
+        
+        return;
+    }
+    
+    NSString *logined = [UDF objectForKey:LoginState];
+    
+    if (!logined || [logined isEqualToString:@"NO"]) {//未登录 根视图为登录页面
+        
+        [self showLogin];
+        
+        return;
+    }
+    
+    //已登录 直接跳转到主页
+    self.window.rootViewController = [CustomTabBarController new];
+    
+    [self.window makeKeyAndVisible];
+     */
+    
+    self.window.rootViewController = [RegisterVC new];
+    [self.window makeKeyAndVisible];
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

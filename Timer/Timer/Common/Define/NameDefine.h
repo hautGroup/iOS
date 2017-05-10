@@ -29,5 +29,6 @@
 
 #define FirstLunchKey @"HaveLunchedNavPage" //是否显示过导航页
 #define LoginState @"HaveLogined" //是否处于登录状态
+#define VALIDATEEMAIL @"validateEmail" //邮箱是否可用请求
 
 #endif /* NameDefine_h */

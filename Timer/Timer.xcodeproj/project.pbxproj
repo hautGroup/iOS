@@ -13,6 +13,9 @@
 		6291B5841EC1F798001CDA4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6291B5821EC1F798001CDA4F /* LaunchScreen.storyboard */; };
 		6291B58F1EC1F798001CDA4F /* TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291B58E1EC1F798001CDA4F /* TimerTests.m */; };
 		6291B59A1EC1F798001CDA4F /* TimerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291B5991EC1F798001CDA4F /* TimerUITests.m */; };
+		62DAD9691EC34A1E00CDBD49 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD9681EC34A1E00CDBD49 /* RegisterVC.m */; };
+		62DAD96C1EC34A5900CDBD49 /* RegisterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD96B1EC34A5900CDBD49 /* RegisterVM.m */; };
+		62DAD96E1EC3545600CDBD49 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DAD96D1EC3545600CDBD49 /* libiconv.tbd */; };
 		62E220891EC2030D00E51890 /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E220821EC2030D00E51890 /* NSData+Encryption.m */; };
 		62E2208A1EC2030D00E51890 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E220841EC2030D00E51890 /* NSString+Extension.m */; };
 		62E2208B1EC2030D00E51890 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E220861EC2030D00E51890 /* UIBarButtonItem+Extension.m */; };
@@ -80,6 +83,11 @@
 		6291B5951EC1F798001CDA4F /* TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6291B5991EC1F798001CDA4F /* TimerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerUITests.m; sourceTree = "<group>"; };
 		6291B59B1EC1F798001CDA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62DAD9671EC34A1E00CDBD49 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		62DAD9681EC34A1E00CDBD49 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		62DAD96A1EC34A5900CDBD49 /* RegisterVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVM.h; sourceTree = "<group>"; };
+		62DAD96B1EC34A5900CDBD49 /* RegisterVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVM.m; sourceTree = "<group>"; };
+		62DAD96D1EC3545600CDBD49 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		62E220811EC2030D00E51890 /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		62E220821EC2030D00E51890 /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
 		62E220831EC2030D00E51890 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DAD96E1EC3545600CDBD49 /* libiconv.tbd in Frameworks */,
 				62E220E51EC207B200E51890 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +259,18 @@
 			path = TimerUITests;
 			sourceTree = "<group>";
 		};
+		62DAD9661EC3499D00CDBD49 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				62DAD9671EC34A1E00CDBD49 /* RegisterVC.h */,
+				62DAD9681EC34A1E00CDBD49 /* RegisterVC.m */,
+				62DAD96A1EC34A5900CDBD49 /* RegisterVM.h */,
+				62DAD96B1EC34A5900CDBD49 /* RegisterVM.m */,
+			);
+			name = Register;
+			path = Base/Register;
+			sourceTree = "<group>";
+		};
 		62E2207C1EC202EA00E51890 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				62E220A71EC2073800E51890 /* Base */,
+				62DAD9661EC3499D00CDBD49 /* Register */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -416,6 +438,7 @@
 		62E220E31EC207B200E51890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62DAD96D1EC3545600CDBD49 /* libiconv.tbd */,
 				62E220E41EC207B200E51890 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
@@ -624,11 +647,13 @@
 				62E220FF1EC20A4400E51890 /* SVProgressHUD.m in Sources */,
 				62E220DF1EC207A200E51890 /* FMDatabaseAdditions.m in Sources */,
 				62E220D11EC2077400E51890 /* ViewController+MASAdditions.m in Sources */,
+				62DAD96C1EC34A5900CDBD49 /* RegisterVM.m in Sources */,
 				62E220CC1EC2077400E51890 /* MASViewAttribute.m in Sources */,
 				62E220C81EC2077400E51890 /* MASCompositeConstraint.m in Sources */,
 				62E220AB1EC2075700E51890 /* EdgeInsetsLabel.m in Sources */,
 				6291B5761EC1F798001CDA4F /* main.m in Sources */,
 				62E220E91EC207DC00E51890 /* FMDBManager.m in Sources */,
+				62DAD9691EC34A1E00CDBD49 /* RegisterVC.m in Sources */,
 				62E221081EC20A7800E51890 /* BaseViewController.m in Sources */,
 				62E220CA1EC2077400E51890 /* MASConstraintMaker.m in Sources */,
 				62E221101EC20AC800E51890 /* CYCTabBar.m in Sources */,

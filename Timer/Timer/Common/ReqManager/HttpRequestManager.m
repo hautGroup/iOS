@@ -10,96 +10,96 @@
 
 @implementation HttpRequestManager
 
-//
-//+ (void) getWithURL:(NSString *) urlString isJson:(BOOL)isJson dismssHUB:(BOOL)dismiss requestID:(NSString *)ID delegate:(id<HttpRequestDelegate>)delegate {
-//    
-//    //[[self new] getWithURL:urlString isJson:isJson dismssHUB:dismiss requestID:ID delegate:delegate];
-//    
-//    NSURL *url = [NSURL URLWithString:urlString];
-//    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-//        
-//        NSLog(@"****************************************************************%@   *****************************   %@ **********************  %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],ID,delegate);
-//        
-//        if (connectionError) {
-//            
-//            if (![[NSThread currentThread] isMainThread]) {
-//                
-//                dispatch_sync(dispatch_get_main_queue(), ^{
-//                    
-//                    [delegate httpError:500 requestID:ID];
-//                });
-//                
-//            }
-//            else {
-//                
-//                [delegate httpError:500 requestID:ID];
-//            }
-//            
-//            return ;
-//        }
-//        
-//        if (data) {
-//            
-//            
-//            if (![[NSThread currentThread] isMainThread]) {
-//                
-//                dispatch_sync(dispatch_get_main_queue(), ^{
-//                    
-//                    if(![TTool checkData:data]) {
-//                        
-//                        return;
-//                    }
-//                    
-//                    [delegate httpHandle:data requestID:ID isJson:isJson];
-//                });
-//                
-//            }
-//            else {
-//                
-//                if(![TTool checkData:data]) {
-//                    
-//                    return;
-//                }
-//                
-//                [delegate httpHandle:data requestID:ID isJson:isJson];
-//            }
-//            
-//        }
-//        
-//    }];
-//    
-//}
-//
-//- (void) getWithURL:(NSString *) urlString isJson:(BOOL)isJson dismssHUB:(BOOL)dismiss requestID:(NSString *)ID delegate:(id<HttpRequestDelegate>)delegate {
-//    
-//    NSURL *url = [NSURL URLWithString:urlString];
-//    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-//        NSLog(@"****************************************************************%@   *****************************   %@ **********************",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],ID);
-//        
-//        if (connectionError) {
-//            
-//            [delegate httpError:500 requestID:ID];
-//            
-//            return ;
-//        }
-//        
-//        //NSLog(@"%@",response);
-//        
-//        if (data) {
-//            
-//            [delegate httpHandle:data requestID:ID isJson:isJson];
-//        }
-//        
-//    }];
-//    
-//}
-//
+
++ (void) getWithURL:(NSString *) urlString isJson:(BOOL)isJson dismssHUB:(BOOL)dismiss requestID:(NSString *)ID delegate:(id<HttpRequestDelegate>)delegate {
+    
+    //[[self new] getWithURL:urlString isJson:isJson dismssHUB:dismiss requestID:ID delegate:delegate];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        
+        NSLog(@"****************************************************************%@   *****************************   %@ **********************  %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],ID,delegate);
+        
+        if (connectionError) {
+            
+            if (![[NSThread currentThread] isMainThread]) {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    [delegate httpError:500 requestID:ID];
+                });
+                
+            }
+            else {
+                
+                [delegate httpError:500 requestID:ID];
+            }
+            
+            return ;
+        }
+        
+        if (data) {
+            
+            
+            if (![[NSThread currentThread] isMainThread]) {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    if(![TTool checkData:data]) {
+                        
+                        return;
+                    }
+                    
+                    [delegate httpHandle:data requestID:ID isJson:isJson];
+                });
+                
+            }
+            else {
+                
+                if(![TTool checkData:data]) {
+                    
+                    return;
+                }
+                
+                [delegate httpHandle:data requestID:ID isJson:isJson];
+            }
+            
+        }
+        
+    }];
+    
+}
+
+- (void) getWithURL:(NSString *) urlString isJson:(BOOL)isJson dismssHUB:(BOOL)dismiss requestID:(NSString *)ID delegate:(id<HttpRequestDelegate>)delegate {
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        NSLog(@"****************************************************************%@   *****************************   %@ **********************",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],ID);
+        
+        if (connectionError) {
+            
+            [delegate httpError:500 requestID:ID];
+            
+            return ;
+        }
+        
+        //NSLog(@"%@",response);
+        
+        if (data) {
+            
+            [delegate httpHandle:data requestID:ID isJson:isJson];
+        }
+        
+    }];
+    
+}
+
 //+ (void)uploadFileWithURL:(NSString *)urlStr
 //                 filesDic:(NSDictionary *)fileDic
 //                  pramDic:(NSDictionary *)pramDic
