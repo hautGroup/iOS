@@ -21,6 +21,8 @@
 
 #define ValidateEmail @"/validateEmail" //校验邮箱是否可用
 
+#define Login @"/login" //登录
+
 
 
 #endif /* URLDefine_h */

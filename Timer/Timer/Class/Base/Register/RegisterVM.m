@@ -15,4 +15,20 @@
     return [NSString stringWithFormat:@"%@%@?email=%@",BaseURL,ValidateEmail,email];
 }
 
+- (NSString *)getRegisterURLWithEmail:(NSString *)email nickNm:(NSString *)nickNm psw:(NSString *)psw mobile:(NSString *)mobile {
+    
+    return [NSString stringWithFormat:@"%@/%@?mobile=%@&nickname=%@&email=%@&password=%@",BaseURL,RegisterURL,mobile,nickNm,email,psw];
+}
+
+- (NSDictionary *)handleLoginResult:(NSData *)resultData {
+    
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:resultData options:NSJSONReadingMutableContainers error:nil];
+    if (!dic || dic.count == 0) {
+        
+        return @{M_ILLEGAL:@"服务器异常 请稍后重试"};
+    }
+    
+    return @{};
+}
+
 @end

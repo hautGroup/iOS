@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RegisterVC.h"
+#import "LoginVC.h"
 
 @interface AppDelegate ()
 
@@ -59,7 +59,7 @@
     [self.window makeKeyAndVisible];
      */
     
-    self.window.rootViewController = [RegisterVC new];
+    self.window.rootViewController = [LoginVC new];
     [self.window makeKeyAndVisible];
 }
 

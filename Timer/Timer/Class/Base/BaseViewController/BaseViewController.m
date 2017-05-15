@@ -118,27 +118,27 @@
 //    
 //}
 //
-//- (void)doPost:(NSString *)url params:(NSDictionary *)params useJson:(BOOL)useJson showProgress:(BOOL) showProgress isDismissHUD:(BOOL)isDismiss withProgressText:(NSString *)progressText {
-//    
-//    self.isloading=TRUE;
-//    if(showProgress && ![SVProgressHUD isVisible]){
-//        [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
-//        [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-//        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
-//        [SVProgressHUD showWithStatus:progressText];
-//        
-//    }
-////    [HttpRequestHelper doPost:url params:params dismssHUB:isDismiss json:useJson delegate:self];
-//}
-//
-//- (void)doPost:(NSString *)url data:(NSData *)bodyData showHUB:(BOOL)show dismissHUB:(BOOL)dismiss requestID:(NSString *)requestID isJson:(BOOL)isJson delegate:(id<HttpRequestDelegate>)delegate {
-//    
-//    self.isloading = true;
-//    
-//    [self showHUD:show withText:@"" progress:0];
-//    
-//    [HttpRequestManager doPost:url data:bodyData dismssHUB:dismiss requestID:requestID isJson:isJson delegate:delegate];
-//}
+- (void)doPost:(NSString *)url params:(NSDictionary *)params useJson:(BOOL)useJson showProgress:(BOOL) showProgress isDismissHUD:(BOOL)isDismiss withProgressText:(NSString *)progressText {
+    
+    self.isloading=TRUE;
+    if(showProgress && ![SVProgressHUD isVisible]){
+        [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
+        [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+        [SVProgressHUD showWithStatus:progressText];
+        
+    }
+//    [HttpRequestHelper doPost:url params:params dismssHUB:isDismiss json:useJson delegate:self];
+}
+
+- (void)doPost:(NSString *)url data:(NSData *)bodyData showHUB:(BOOL)show dismissHUB:(BOOL)dismiss requestID:(NSString *)requestID isJson:(BOOL)isJson delegate:(id<HttpRequestDelegate>)delegate {
+    
+    self.isloading = true;
+    
+    [self showHUD:show withText:@"" progress:0];
+    
+    [HttpRequestManager doPost:url data:bodyData dismssHUB:dismiss requestID:requestID isJson:isJson delegate:delegate];
+}
 //
 //- (void)uploadFileWithURL:(NSString *)urlStr filesDic:(NSDictionary *)fileDic paraDic:(NSDictionary *)pramDic delegate:(id<HttpUploadDelegate>)delegate {
 //    
@@ -207,27 +207,27 @@
 //    
 }
 //
-//- (void) httpHandle:(NSData *)resultData requestID:(NSString *)ID isJson:(BOOL)isJson {
-//    
-//    NSLog(@"***********************%@",ID);
-//    
-//    self.isloading = NO;
-//    
-//    [SVProgressHUD dismiss];
-//    
-//    if (![TTool checkData:resultData]) {
-//        
-//        return;
-//    }
-//    
+- (void) httpHandle:(NSData *)resultData requestID:(NSString *)ID isJson:(BOOL)isJson {
+    
+    NSLog(@"***********************%@",ID);
+    
+    self.isloading = NO;
+    
+    [SVProgressHUD dismiss];
+    
+    if (![TTool checkData:resultData]) {
+        
+        return;
+    }
+    
 //    if ([ID isEqualToString:@"GetUserInfo"]) {
 //        
 //        NSArray *arr = [NSJSONSerialization JSONObjectWithData:resultData options:NSJSONReadingMutableContainers error:nil];
 //        
 //        [self analyzeUserInfo:arr];
 //    }
-//    
-//}
+
+}
 //
 //- (void)analyzeUserInfo:(NSArray *)arr {
 //    

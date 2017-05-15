@@ -50,6 +50,12 @@
 		62E221081EC20A7800E51890 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E221071EC20A7800E51890 /* BaseViewController.m */; };
 		62E2210F1EC20AC800E51890 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E2210B1EC20AC800E51890 /* CustomTabBarController.m */; };
 		62E221101EC20AC800E51890 /* CYCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E2210E1EC20AC800E51890 /* CYCTabBar.m */; };
+		62E6D0001EC4988A00703A15 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E6CFFF1EC4988A00703A15 /* LoginVC.m */; };
+		62E6D0031EC498B800703A15 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E6D0021EC498B800703A15 /* LoginVM.m */; };
+		62F59A881EC9D1C900179A74 /* icon_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F59A851EC9D1C900179A74 /* icon_cancel.png */; };
+		62F59A891EC9D1C900179A74 /* icon_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F59A861EC9D1C900179A74 /* icon_cancel@2x.png */; };
+		62F59A8A1EC9D1C900179A74 /* icon_cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F59A871EC9D1C900179A74 /* icon_cancel@3x.png */; };
+		62F59A8E1EC9D56200179A74 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F59A8D1EC9D56200179A74 /* UserInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +172,15 @@
 		62E2210B1EC20AC800E51890 /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		62E2210D1EC20AC800E51890 /* CYCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCTabBar.h; sourceTree = "<group>"; };
 		62E2210E1EC20AC800E51890 /* CYCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCTabBar.m; sourceTree = "<group>"; };
+		62E6CFFE1EC4988A00703A15 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		62E6CFFF1EC4988A00703A15 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		62E6D0011EC498B800703A15 /* LoginVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
+		62E6D0021EC498B800703A15 /* LoginVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
+		62F59A851EC9D1C900179A74 /* icon_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_cancel.png; sourceTree = "<group>"; };
+		62F59A861EC9D1C900179A74 /* icon_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_cancel@2x.png"; sourceTree = "<group>"; };
+		62F59A871EC9D1C900179A74 /* icon_cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_cancel@3x.png"; sourceTree = "<group>"; };
+		62F59A8C1EC9D56200179A74 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		62F59A8D1EC9D56200179A74 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +299,7 @@
 		62E2207D1EC202EA00E51890 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				62F59A8B1EC9D55800179A74 /* SingleTone */,
 				62E220E61EC207DC00E51890 /* FMDBManager */,
 				62E220A01EC2062D00E51890 /* Define */,
 				62E2209C1EC205F600E51890 /* Reachability */,
@@ -299,6 +315,7 @@
 			children = (
 				62E220A71EC2073800E51890 /* Base */,
 				62DAD9661EC3499D00CDBD49 /* Register */,
+				62E6CFFD1EC4987000703A15 /* Login */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -306,6 +323,7 @@
 		62E2207F1EC202EA00E51890 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				62F59A841EC9D1C900179A74 /* Icon */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -498,6 +516,37 @@
 			path = CustonTabBar;
 			sourceTree = "<group>";
 		};
+		62E6CFFD1EC4987000703A15 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				62E6CFFE1EC4988A00703A15 /* LoginVC.h */,
+				62E6CFFF1EC4988A00703A15 /* LoginVC.m */,
+				62E6D0011EC498B800703A15 /* LoginVM.h */,
+				62E6D0021EC498B800703A15 /* LoginVM.m */,
+			);
+			name = Login;
+			path = Base/Login;
+			sourceTree = "<group>";
+		};
+		62F59A841EC9D1C900179A74 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				62F59A851EC9D1C900179A74 /* icon_cancel.png */,
+				62F59A861EC9D1C900179A74 /* icon_cancel@2x.png */,
+				62F59A871EC9D1C900179A74 /* icon_cancel@3x.png */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
+		62F59A8B1EC9D55800179A74 /* SingleTone */ = {
+			isa = PBXGroup;
+			children = (
+				62F59A8C1EC9D56200179A74 /* UserInfo.h */,
+				62F59A8D1EC9D56200179A74 /* UserInfo.m */,
+			);
+			path = SingleTone;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -609,8 +658,11 @@
 			files = (
 				6291B5841EC1F798001CDA4F /* LaunchScreen.storyboard in Resources */,
 				6291B5811EC1F798001CDA4F /* Assets.xcassets in Resources */,
+				62F59A881EC9D1C900179A74 /* icon_cancel.png in Resources */,
 				62E220C71EC2077400E51890 /* Info.plist in Resources */,
 				62E220FE1EC20A4400E51890 /* SVProgressHUD.bundle in Resources */,
+				62F59A8A1EC9D1C900179A74 /* icon_cancel@3x.png in Resources */,
+				62F59A891EC9D1C900179A74 /* icon_cancel@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +689,7 @@
 			files = (
 				62E220D01EC2077400E51890 /* View+MASAdditions.m in Sources */,
 				62E220901EC2035C00E51890 /* TTool.m in Sources */,
+				62E6D0001EC4988A00703A15 /* LoginVC.m in Sources */,
 				62E2208C1EC2030D00E51890 /* UIView+Extension.m in Sources */,
 				62E220FD1EC20A4400E51890 /* SVProgressAnimatedView.m in Sources */,
 				62E220E01EC207A200E51890 /* FMDatabasePool.m in Sources */,
@@ -656,7 +709,9 @@
 				62DAD9691EC34A1E00CDBD49 /* RegisterVC.m in Sources */,
 				62E221081EC20A7800E51890 /* BaseViewController.m in Sources */,
 				62E220CA1EC2077400E51890 /* MASConstraintMaker.m in Sources */,
+				62E6D0031EC498B800703A15 /* LoginVM.m in Sources */,
 				62E221101EC20AC800E51890 /* CYCTabBar.m in Sources */,
+				62F59A8E1EC9D56200179A74 /* UserInfo.m in Sources */,
 				62E220C91EC2077400E51890 /* MASConstraint.m in Sources */,
 				62E221001EC20A4400E51890 /* SVRadialGradientLayer.m in Sources */,
 				62E220CF1EC2077400E51890 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,

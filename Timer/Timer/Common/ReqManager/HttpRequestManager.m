@@ -373,33 +373,35 @@
     }
 }
 
-//+ (void)doPost:(NSString *)url data:(NSData *)bodyData dismssHUB:(BOOL)dismiss requestID:(NSString *)requestID isJson:(BOOL)isJson delegate:(id<HttpRequestDelegate>)delegate {
-//    
-//    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-//    
-//    request.HTTPMethod = @"POST";
-//    
-//    [request setHTTPBody:bodyData];
-//    
-//    NSOperationQueue *queue=[NSOperationQueue mainQueue];
-//    
-//    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        
-//        if (connectionError) {
-//            
-//            [delegate httpError:500 requestID:requestID];
-//            
-//            return ;
-//        }
-//        
-//        if (data) {
-//            
-//            [delegate httpHandle:data requestID:requestID isJson:isJson];
-//        }
-//    }];
-//}
-//
-////随机分割符
++ (void)doPost:(NSString *)url data:(NSData *)bodyData dismssHUB:(BOOL)dismiss requestID:(NSString *)requestID isJson:(BOOL)isJson delegate:(id<HttpRequestDelegate>)delegate {
+    
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    request.HTTPMethod = @"POST";
+    
+    [request setHTTPBody:bodyData];
+    
+    NSOperationQueue *queue=[NSOperationQueue mainQueue];
+    
+    NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:bodyData options:NSJSONReadingMutableContainers error:nil]);
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        if (connectionError) {
+            
+            [delegate httpError:500 requestID:requestID];
+            
+            return ;
+        }
+        
+        if (data) {
+
+            [delegate httpHandle:data requestID:requestID isJson:isJson];
+        }
+    }];
+}
+
+//随机分割符
 //+ (NSString *)randomMPBoundaryString {
 //    
 //    NSMutableString *randomString = [NSMutableString string];

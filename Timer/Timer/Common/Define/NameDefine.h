@@ -25,10 +25,12 @@
 
 #define GStrAvaterPath @"avater"       //头像缓存地址
 
-
+#define M_ILLEGAL @"illegal" //一些合法性校验
 
 #define FirstLunchKey @"HaveLunchedNavPage" //是否显示过导航页
 #define LoginState @"HaveLogined" //是否处于登录状态
 #define VALIDATEEMAIL @"validateEmail" //邮箱是否可用请求
+#define M_LOGIN @"login" //登录
+#define M_REGISTER @"register" //注册
 
 #endif /* NameDefine_h */

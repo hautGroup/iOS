@@ -16,4 +16,16 @@
  */
 - (NSString *)getVerifyEmail:(NSString *)email;
 
+/**
+ *
+ *  注册URL
+ */
+- (NSString *)getRegisterURLWithEmail:(NSString *)email nickNm:(NSString *)nickNm psw:(NSString *)psw mobile:(NSString *)mobile;
+
+/**
+ *
+ *  登录数据返回
+ */
+- (NSDictionary *)handleLoginResult:(NSData *)resultData;
+
 @end
