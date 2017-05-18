@@ -99,6 +99,15 @@
  */
 - (void)loginBtnClick:(UIButton *)sender {
     
+    NSDictionary *resultDic = [_VM checkNickNm:_nickNmTF.text psw:_pswTF.text];
+    
+    if (resultDic[M_ILLEGAL]) {
+        
+        My_Window_Tip(resultDic[M_ILLEGAL]);
+        
+        return;
+    }
+    
     [self doPost:[NSString stringWithFormat:@"%@%@",BaseURL,Login] data:[_VM getRequestDataWithNickName:_nickNmTF.text psw:_pswTF.text] showHUB:YES dismissHUB:YES requestID:M_LOGIN isJson:YES delegate:(id)self];
 }
 
@@ -117,7 +126,25 @@
     
     if ([ID isEqualToString:M_LOGIN]) {
         
+        NSDictionary *dic = [_VM handleLoginData:resultData];
         
+        if (dic[M_ILLEGAL]) {
+            
+            My_Window_Tip(dic[M_ILLEGAL]);
+            
+            return;
+        }
+        
+        [[UserInfo sharedInfo] setNickName:_nickNmTF.text];
+        [[UserInfo sharedInfo] setPsw:[TTool md5_32:_pswTF.text]];
+        
+        UserInfo *info = [UserInfo sharedInfo];
+        
+        NSString *msg = [NSString stringWithFormat:@"用户ID:%ld 昵称:%@ email:%@ 电话号码:%@ 是否签到:%d 激活状态:%@",info.userID,info.nickName,info.email,info.phoneNum,info.isNotfiySign,info.status];
+        
+        My_Alert(@"登录成功", msg, self, nil, nil, @"OK", nil);
+        
+        //My_Window_Tip(@"登录成功");
     }
     
 }

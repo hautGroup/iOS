@@ -22,4 +22,11 @@
  */
 - (NSData *)getRequestDataWithNickName:(NSString *)nickNm psw:(NSString *)psw;
 
+/**
+ *
+ *  登录成功后数据返回
+ */
+- (NSDictionary *)handleLoginData:(NSData *)data ;
+
+
 @end

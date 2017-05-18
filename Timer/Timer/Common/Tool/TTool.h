@@ -168,7 +168,19 @@
          withHeadPosition:(int)head
           andFootPosition:(int)foot;
 
+/**
+ *
+ *  判断邮箱
+ *
+ */
+//邮箱
++ (BOOL)isEmailAddress:(NSString *)email;
 
+/**
+ *
+ *  是否是纯数字
+ */
++ (BOOL)isPureNumandCharacters:(NSString *)string;
 
 
 @end

@@ -28,4 +28,15 @@
  */
 - (NSDictionary *)handleLoginResult:(NSData *)resultData;
 
+/**
+ *
+ *  校验邮箱 用户名 密码
+ */
+- (NSDictionary *)checkEmail:(NSString *)email userNm:(NSString *)userName psw:(NSString *)psw phoneNum:(NSString *)phoneNum;
+
+/**
+ *
+ *  注册时数据返回
+ */
+- (NSDictionary *)handleRegisterResult:(NSData *)data;
 @end

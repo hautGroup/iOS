@@ -86,9 +86,10 @@
     }];
     //密码
     _pswTF = [UITextField new];
-    _pswTF.placeholder = @"密码";
+    _pswTF.placeholder = @"密码(必须同时包含数字和字母)";
     _pswTF.font = PF_R(15);
     _pswTF.textColor = DEEP_COLOR;
+    _pswTF.secureTextEntry = YES;
     [self.view addSubview:_pswTF];
     [_pswTF mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -143,6 +144,15 @@
     
     //将来需要校验各个参数的合法性
     
+    NSDictionary *resultDic = [_VM checkEmail:_emailTF.text userNm:_nickNmTF.text psw:_pswTF.text phoneNum:_mobileTF.text];
+    
+    if (resultDic[M_ILLEGAL]) {
+        
+        My_Window_Tip(resultDic[M_ILLEGAL]);
+        
+        return;
+    }
+    
     [self getRequestWithURL:[_VM getRegisterURLWithEmail:_emailTF.text nickNm:_nickNmTF.text psw:_pswTF.text mobile:_mobileTF.text] isJson:YES showHUD:YES requestID:M_REGISTER delegate:(id)self];
 }
 
@@ -153,6 +163,23 @@
     if ([ID isEqualToString:VALIDATEEMAIL]) {//校验邮箱
         
         
+        return;
+    }
+    
+    if ([ID isEqualToString:M_REGISTER]) {//注册
+        
+        NSDictionary *result = [_VM handleRegisterResult:resultData];
+        
+        if (result[M_ILLEGAL]) {
+            
+            My_Window_Tip(result[M_ILLEGAL]);
+            
+            return;
+        }
+        
+        My_Window_Tip(@"注册成功！！！");
+        
+        return;
     }
 }
 

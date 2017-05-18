@@ -18,6 +18,7 @@
 #import "FMDBManager.h"
 #import "HttpRequestManager.h"
 #import "EnumDefine.h"
+#import "UserInfo.h"
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch

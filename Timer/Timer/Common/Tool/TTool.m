@@ -604,6 +604,22 @@ int code_convert(char *from_charset, char *to_charset, char *inbuf, size_t inlen
     return [originalStr stringByReplacingCharactersInRange:range withString:@"****"];
 }
 
++ (BOOL)isEmailAddress:(NSString *)email {
+    
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+}
++ (BOOL)isPureNumandCharacters:(NSString *)string {
+    
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    
+    if(string.length > 0)
+    {
+        return NO;
+    }
+    return YES;
+}
 
 
 @end

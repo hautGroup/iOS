@@ -22,14 +22,28 @@
 
 - (NSData *)getRequestDataWithNickName:(NSString *)nickNm psw:(NSString *)psw {
     
-    NSDictionary *dataDic = @{@"nickname":nickNm,@"password":psw};
+    NSDictionary *dataDic = @{@"nickname":nickNm,@"password":psw,@"deviceNumber":[TTool GetSoftID],@"platform":@"ios"};
     NSLog(@"%@",dataDic);
     
-    NSString *dataStr = [NSString stringWithFormat:@"nickname=%@&password=%@",nickNm,psw];
+    NSString *dataStr = [NSString stringWithFormat:@"nickname=%@&password=%@&deviceNumber=%@&platform=ios",nickNm,psw,[TTool GetSoftID]];
     
     return [dataStr dataUsingEncoding:NSUTF8StringEncoding];
     
     return [NSJSONSerialization dataWithJSONObject:dataDic options:NSJSONWritingPrettyPrinted error:nil];
+}
+
+- (NSDictionary *)handleLoginData:(NSData *)data {
+    
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    if (!dic[@"code"] || [dic[@"code"] integerValue] != 1) {
+        
+        return @{M_ILLEGAL:dic[@"message"] ? dic[@"message"] : @"登录失败 请稍后重试"};
+    }
+    
+    [[UserInfo sharedInfo] setInfoWithDic:dic[@"result"]];
+    
+    return @{@"":@""};
 }
 
 @end
