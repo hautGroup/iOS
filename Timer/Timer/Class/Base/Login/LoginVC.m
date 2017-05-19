@@ -129,8 +129,7 @@
         NSLog(@"jsonString=%@",jsonString); // [{"Pwd":"123","User":"zhangsan"},{"name":"zhangsan","age":18,"book":["iOS","Swift"]}]
         // NSString==>NSData
 //        jsonData = [jsonString dataUsingEncoding:NSASCIIStringEncoding];
-        
-<<<<<<< HEAD
+
         NSDictionary *dic = [_VM handleLoginData:resultData];
         
         if (dic[M_ILLEGAL]) {
@@ -150,18 +149,6 @@
         My_Alert(@"登录成功", msg, self, nil, nil, @"OK", nil);
         
         //My_Window_Tip(@"登录成功");
-=======
-        NSDictionary *dict =[self stringToNSArrayOrNSDictionary:jsonString]; // NSString==>NSArray/NSDictionary
-        NSLog(@"dict=%@",dict);
-        if ([dict[@"code"]intValue] == 1) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"登陆成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            [alert show];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:dict[@"message"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            [alert show];
-        }
-       
->>>>>>> c45859baa8cd9ac46e224356698c76626b1b422e
     }
     
 }
